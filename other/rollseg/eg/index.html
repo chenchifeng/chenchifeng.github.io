@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>轮播器</title>
+    <style>
+    /*设置 轮播空间区域 样式*/
+    #rs-space{
+        width: 80%;
+        border: 1px solid #ccc;
+        margin:10px auto;
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    /*设置 选择轮播图片按钮 样式 */
+	#rs-btn{
+        z-index: 10;
+        position: absolute;
+		right: 4px;
+        bottom: 4px;
+	}
+    .rs-btn-item {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.35);
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div id="rs-space">
+        <ul id="rs-outer">
+            <li class="rs-seg">
+                <img src="./images/1.jpg" />
+            </li>
+            <li class="rs-seg">
+                <img src="./images/2.jpg" />
+            </li>
+            <li class="rs-seg">
+                <img src="./images/3.jpg" />
+            </li>
+            <li class="rs-seg">
+                <img src="./images/4.jpg" />
+            </li>
+            <li class="rs-seg">
+                <img src="./images/5.jpg" />
+            </li>
+        </ul>
+        <ul id="rs-btn">
+            <li class="rs-btn-item">1</li>
+            <li class="rs-btn-item">2</li>
+            <li class="rs-btn-item">3</li>
+            <li class="rs-btn-item">4</li>
+            <li class="rs-btn-item">5</li>
+        </ul>
+    </div>
+
+    <script src="./js/rollseg-1.0.0.js"></script>
+    <script>
+    RS(5, { width: "756px", height: "425px" }, 3000, 300, function(e, i) {
+        // console.log(i);
+    });
+    </script>
+</body>
+</html>
