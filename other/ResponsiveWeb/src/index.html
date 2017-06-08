@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!-- //下面这句话方便浏览器识别这个网页是中文的.一些像chrome的就那次就可以对它识别翻译源语言,朗读识别等,也有利于SEO -->
+<!-- //zh是中文,zh-CN是中文简体,en是英文 -->
+<html lang="zh">
+<head>
+    <!-- 一下这句按照标准要放在head里面的第一行 W3C标准是charset要放在页面代码前1024字节 -->
+    <meta charset="utf-8">
+    <!-- 下面这句是告诉浏览器,如果可以的话,就让IE用dege的方式去浏览这个页面(强制使用以最新的IE浏览器模式渲染页面) -->
+    <meta http-equiv="x-ua-compatible" content="id=edge">
+    <!-- 使用理想视口。（设置视口,让(布局)视口宽度等于设备(渲染表面)可视视口宽度,默认缩放比例为1） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>响应式</title>
+    <!-- normalize.css是用于统一浏览器默认样式的。CSS Resets的一种新的解决方案 -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- 引入轮播插件的CSS样式表 -->
+    <link rel="stylesheet" href="js/vendor/owl.carousel.2.1.0/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="js/vendor/owl.carousel.2.1.0/assets/owl.theme.default.min.css">
+</head>
+
+<body>
+<!-- 下面的代码是IE条件注释,在满足这个条件的时候才会运行[if]和[endif]之间的代码 ,gt就是高于ie8,lt就是低于,lte就是低于等于,gte就是高于等于-->
+<!--[if lte IE8]>
+    <p class="browserupgrade">还用这么低版本的浏览器会被鄙视的,到<a href="http://browsehappy.com">这里</a>更新,以获取最佳体验</p>
+<![endif]-->
+
+<!-- header(页眉部分)是html5的新标签,是让页面个号的区分结构的. -->
+<header>
+    <!-- nav(导航),这里是顶部导航 -->
+    <nav class="top">
+        <!-- 这是顶部导航的左边部分 -->
+        <span class="tel">理财热线:400-888-8888</span>
+        <!-- 这是顶部导航的右边部分 -->
+        <ul>
+            <li><a href="#">登陆</a></li>
+            <li><a href="#">快速注册</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">帮助</a></li>
+            <li><a href="#">App下载</a></li>
+        </ul>
+    </nav>
+
+    <!-- nav(导航),这里是主导航 -->
+    <nav class="main">
+        <!-- 这是一个logo,像logo这种很有必要的图片应该用img标签嵌入到a标签中,其他可有可无的图片可以利用背景图片style引入 -->
+        <a href="#" class="brand"><img src="img/logo@1x.png" alt="回到首页"></a>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">理财通道</a></li>
+            <li><a href="#">投资通道</a></li>
+            <li><a href="#">新手专区</a></li>
+            <li><a href="#">安全保障</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 中间部分,一般出名container,意思是容器 -->
+<div class="container">
+    <!-- 这里每一个部分都可以定义一个section(部分) (如果有文章就定义article,但是这里没有) -->
+    <!-- 交易内容部分 -->
+    <!-- 以下加上clearfix的class是为了清除浮动 -->
+    <section class="transaction clearfix">
+        <div class="trans-content">
+            <!-- 交易数据 -->
+            <div class="trans-data">
+                <span>平台累计成交金额</span>
+                <span class="trans-money">19888</span>
+                <span>万元</span>
+            </div>
+            <div class="trans-data">
+                <span>过去七日成交金额</span>
+                <span class="trans-money">1888</span>
+                <span>万元</span>
+            </div>
+            <div class="trans-report">
+                <a href="#">参看平台运营报告</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 广告部分 -->
+    <section class="ad">
+        <!-- 这3个广告都用item是因为这里有个滚动,方便以后调整 -->
+        <!-- 这里用的是[Owl Carousel 2]jQuery旋转木马插件 -->
+        <!-- 一般插件在哪里下载:可以直接搜索插件名下载(在百度或github),怎么使用:参考官方文档是最好的上手途径 -->
+        <!-- 使用方法,引入必须的css,js->引入html内容->用js调用(在mian.js)并进行配置 -->
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <!-- HTML5的响应式图片 picture 标签 -->
+                <!-- 里面放的是source标签还有img标签,默认显示img标签,当条件符合media属性设置值时加载对应srcset属性路径的图片 -->
+                <!-- 例如 media="(min-width:50em)" 就是 当宽度大于等于50em时,把img的src设置成对应source里的srcset的"img/ad001-l.png" -->
+                <picture>
+                    <source srcset="img/ad001-l.png" media="(min-width:50em)">
+                    <source srcset="img/ad001-m.png" media="(min-width:30em)">
+                    <img src="img/ad001.png" alt="2015年度报告">
+                </picture>
+            </div>
+            <div class="item">
+                <picture>
+                    <source srcset="img/ad002-l.png" media="(min-width: 50em)">
+                    <source srcset="img/ad002-m.png" media="(min-width: 30em)">
+                    <img srcset="img/ad002.png" alt="新年红包">
+                </picture>
+            </div>
+            <div class="item">
+                <picture>
+                    <source srcset="img/ad003-l.png" media="(min-width: 50em)">
+                    <source srcset="img/ad003-m.png" media="(min-width: 30em)">
+                    <img srcset="img/ad003.png" alt="新手秘籍">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能部分 -->
+    <section class="feature">
+        <div class="item">
+            <h3>安全</h3>
+            <p>国家AAA信用平台<br>银行资金托管<br>上市公司背景保证</p>
+        </div>
+        <div class="item">
+            <h3>权威</h3>
+            <p>中央电视台推荐<br>互联网百强企业<br>标准起草单位</p>
+        </div>
+        <div class="item">
+            <h3>省心</h3>
+            <p>100元起投<br>用户利益保障机制<br>保险公司承保</p>
+        </div>
+    </section>
+
+<!-- 以下加上clearfix的class是为了清除浮动 -->
+
+    <!-- 最新公告部分 -->
+    <section class="notice clearfix">
+        <!-- 这里日期是不同样式的,所以用span括住 -->
+        <a href="#"><span>2015-12-31</span>元旦期间业务受理及值班公告元旦期间业务受理及值班公告元旦期间业务受理及值班公告</a>
+        <!-- 因为这里也是一个连接,所以这里用一个more的class去区分开 -->
+        <a href="#" class="more">更多公告</a>
+    </section>
+
+    <!-- 一下是两个产品部分 -->
+    <section class="product clearfix">
+        <!-- 分析结构:左边是大标题,然后右边有一些项目,这些项目又有一些小的标题,再右边还有一个按钮 -->
+        <h2>
+            固定期限产品
+            <!-- 下面有一些强调的内容,用em标签 -->
+            <em>甄选优质基金</em>
+            <em>省事省力</em>
+            <em>坐等收益</em>
+        </h2>
+        <div class="product-content">
+            <div class="item  clearfix">
+                <!-- 这里的3是分开的,而且是有强调的 -->
+                <h3><em>3</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <!-- 这里的购买,弄好样式之后,看上去像一个button,但其实不是的 -->
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <h3><em>3-6</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <h3><em>6-12</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <h3><em>12-24</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <h3><em>12-24</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <h3><em>24</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="product clearfix">
+        <!-- 分析结构:左边是大标题,然后右边有一些项目,这些项目又有一些小的标题,再右边还有一个按钮 -->
+        <h2>
+            固定期限产品
+            <!-- 下面有一些强调的内容,用em标签 -->
+            <em>甄选优质基金</em>
+            <em>省事省力</em>
+            <em>坐等收益</em>
+        </h2>
+        <div class="product-content">
+            <div class="item clearfix">
+                <!-- 这里的3是分开的,而且是有强调的 -->
+                <h3><em>3</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <h3><em>3-6</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <h3><em>6-12</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <h3><em>12-24</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <h3><em>12-24</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <h3><em>24</em>个月</h3>
+                <div class="info">
+                    <!-- 这个起没有强调,只是一个附加的样式,所以用i来区别差异 -->
+                    <p>约定年化收益率:<span class="year-rate">3.5%</span><i>起</i></p>
+                    <p>总成交金额:<span class="money">1880</span><i>万元</i></p>
+                </div>
+                <div class="buy">
+                    <a href="#">购买</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部快捷导航部分 -->
+    <!-- 因为这个部分起的是一个导航的功能,所以这里用nav更合适 -->
+    <nav class="footer">
+        <!-- 分析结构:左边一个logo,右边5个无序列表 -->
+        <div class="footer-content clearfix">
+            <!-- 这里的logo,因为只是用来展示的,用一个class,设置背景图片就可以了 -->
+            <p class="brand"></p>
+            <!-- 每一个部分都可以设置成一个无需列表 -->
+            <ul>
+                <li class="title">关于我们</li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">业务模式</a></li>
+                <li><a href="#">合作机构</a></li>
+                <li><a href="#">服务协议</a></li>
+            </ul>
+            <ul>
+                <li class="title">关于我们</li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">业务模式</a></li>
+                <li><a href="#">合作机构</a></li>
+                <li><a href="#">服务协议</a></li>
+            </ul>
+            <ul>
+                <li class="title">关于我们</li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">业务模式</a></li>
+                <li><a href="#">合作机构</a></li>
+                <li><a href="#">服务协议</a></li>
+            </ul>
+            <ul>
+                <li class="title">关于我们</li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">业务模式</a></li>
+                <li><a href="#">合作机构</a></li>
+                <li><a href="#">服务协议</a></li>
+            </ul>
+            <ul>
+                <li class="title">关于我们</li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">业务模式</a></li>
+                <li><a href="#">合作机构</a></li>
+                <li><a href="#">服务协议</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- footer(页脚部分) -->
+<footer>
+    <!-- 这里有两个class,icon是用于对图标设置大小,是否灰色,圆角等的 -->
+    <!-- 而icon-xxx是用于设置位置,背景图片等 -->
+    <ul>
+        <li><span class="icon icon-zfywxkz">支付业务许可证</span></li>
+        <li><span class="icon icon-picrk">PIC认证</span></li>
+        <li><span class="icon icon-visayz">Visa 验证</span></li>
+        <li><span class="icon icon-vsjmfw">VerSign加密服务</span></li>
+        <li><span class="icon icon-wlgs">网络工商</span></li>
+        <li><span class="icon icon-rzcx">电子商务协会认证诚信网</span></li>
+        <li><span class="icon icon-gs">北京工商</span></li>
+    </ul>
+    <p>广州紫风理财有限公司 版权所有 ® 2015-2016</p>
+</footer>
+
+<!-- 一般建议js都是卸载单独一个.js文件里。而且非必要的话在页面底部</body>前面插入。 -->
+<!-- 因为当浏览器遇到<script>标签时,会停下来看看有什么要做,然后再往下解释/渲染 ,而且<script>只认识script前的html内容,对后面的内容不能读也不能写-->
+<!-- 引入js文件 -->
+<script src="js/modernizr.js"></script>
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/owl.carousel.2.1.0/owl.carousel.min.js"></script>
+<script src="js/vendor/picturefill.min.js"></script>
+<script src="js/main.js"></script>
+<!-- end 引入js -->
+</body>
+</html>

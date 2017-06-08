@@ -1,0 +1,891 @@
+@charset "UTF-8";
+/*******************************************************************************
+*响应式页面的main.css
+*因为是一边学一边写,所以注释会特别多。这样方便学习，也方便以后的代码复用还有复习
+*整个过程:css Resets>设置基本默认值>工具样式>页眉和页脚样式>主要内容样式>媒体查询
+*(移动端/响应式的样式书写)
+*边书对照html写css一边调试,同时改进html,实现所有样式后,开始页面一些逻辑/功能(js)的编写
+*请注意单词拼写
+*******************************************************************************/
+
+/*==========
+  基本默认值
+  ==========*/
+
+/*页面全局*/
+html {
+    font-size:62.5%;
+    color:#222;
+}
+
+/*选中*/
+/*伪元素前面的冒号,老浏览器是::,新浏览器是:*/
+::selection {
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+
+/*无序列表*/
+ul {
+    /*去除默认的边距*/
+    margin:0;
+    padding:0;
+}
+
+li {
+    /*去除默认的小圆点*/
+    list-style: none;
+}
+
+
+/*==========
+  工具样式
+  ==========*/
+/*和bs的用法差不多,需要实现什么样式的时候直接在元素添加相应的class即可*/
+
+/*居中显示*/
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*右浮动*/
+.pull-right {
+    float: right !important;
+}
+
+/*左浮动*/
+.pull-left {
+    float: left !important;
+}
+
+/*右对齐*/
+.text-right {
+    text-align: right !important;
+}
+
+/*左对齐*/
+.text-left {
+    text-align: left !important;
+}
+
+/*隐藏元素(彻底隐藏,相当于注释了那个元素的所有代码)*/
+.hide {
+    display: none !important;
+}
+
+/*隐藏元素(只是不见内容,但是元素所占的空间还是没有改变的)*/
+.invisible {
+    visibility: hidden;
+}
+
+/*显示元素*/
+.show {
+    display: block !important;
+}
+
+/*隐藏文本*/
+.text-hide {
+    /*字体大小0/行高0 a是一个字体名称而已*/
+    font:0/0 a;
+    /*字体颜色:透明*/
+    color: transparent;
+    text-shadow: none;
+    /*背景颜色:透明*/
+    background-color: transparent;
+    border: 0;
+}
+
+/*******************************************************************************
+*问题:浮动后父元素高度变为0(高度塌陷)
+*解决1:在父元素结束标签前添加一个空标签<div style="clear:both"></div>
+*      但是这样就添加了没有意义的标签了
+*解决2:给父元素添加属性:overflow:auto;或overflow:hidden;
+*解决3:让父元素本身也浮动 (但是这样会影响页面布局,而且也会让上一层产生这样的问题)
+*解决4:使用after伪元素。在父元素增加class=.clearfix,然后给这个class设置一个:after↓↓
+*原理:BFC(快捷格式化上下文),能除法bfc就能清除浮动
+*
+*这里说一下::after这个伪元素,是实现在<x>...</x>中的...后面添加内容的
+*而::before是前面
+*******************************************************************************/
+
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/*=================
+  浏览器更新提示样式
+  =================*/
+  .browsergrade {
+      margin-left: 0;
+      padding: 1rem;
+      background: #ccc;
+  }
+
+
+/*=============
+  自定义页面样式
+  =============*/
+body {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    background-color: #f7f7f7;
+}
+
+a {
+    /*设置默认链接字体颜色,去掉下划线*/
+    color: #666;
+    text-decoration: none;
+}
+
+/*设置鼠标悬浮(指中)/被激活时的颜色,添加下划线*/
+a:hover,a:active {
+    color:#0ae;
+    text-decoration: underline;
+}
+
+/*接下来是先写头部,主内容区,以及脚部的一个width:100%,然后再分别写头部,脚部,主内容区*/
+/*从简单到复杂写*/
+/*网站头部*/
+header {
+    width: 100%;
+}
+/*顶部导航*/
+header .top {
+    /*因为前面设置了html的font-size:62.5%,也就是16*62.5%=10px,所以这里的3rem=30px*/
+    /*说明一下这里的宽度是继承了父元素(header)的,然后高度是根据内容的*/
+    line-height: 3rem;
+    padding: 0 1.5rem;
+    color: #fff;
+    background: #555;
+    border-bottom: 1px #ecc000 solid;
+}
+/*顶部导航的电话(左边部分)*/
+header .top .tel {
+    float: left;
+}
+/*导航(右边部分)*/
+header ul {
+     text-align: right;
+}
+/*如果右对齐用的是float父元素产生高度塌陷,那要添加工具样式.clearfix的class*/
+/*区别:text-align: right;是内容居右。而float：right；是元素居右*/
+
+/*把垂直列表变成水平列表(因为li本身是块元素,所以就会换行显示,默认就是垂直列表)*/
+header .top ul li {
+    display: inline-block;
+}
+/*这里 li+li CSS选择器 代表 第一个元素紧跟着后面的的兄弟节点li,不包括第一个li ,这个选择器很常用*/
+/*给li之间加线分隔,还有设置间距*/
+header .top ul li + li {
+    border-left: 1px solid #999;
+    /*这句是用于清楚<li>之间换行符引起的空字符空隙*/
+    margin-left:-3px;
+}
+
+header .top ul li a {
+    /*设置为行内块状元素可以设置宽高度*/
+    display: inline-block;
+    padding: 0 1.5rem;
+    color: #fff;
+}
+
+/* 添加媒体查询(实现响应式) 媒体查询是有继承的,也就是只要符合查询规则的都会被应用上媒体查询的样式*/
+/*这里添加一个(大屏)媒体查询 只在屏幕上应用 当 宽度小于50em 时*/
+@media only screen and (max-width: 50em) {
+    /* 减少左右内填充 */
+    header .top ul li a {
+        padding: 0 1rem;
+    }
+}
+/*这里添加一个(中屏)媒体查询 只在屏幕上应用 当 宽度小于50em 且 宽度大于30.0625em 时*/
+@media only screen and (min-width: 30.0625em) and (max-width: 50em) {
+    /*并没有什么可以改变的*/
+    /*建议是想复制这三个媒体查询,然后再一一看看有什么要设置的*/
+}
+/*这里添加一个(小屏)媒体查询 只在屏幕上应用 当 宽度小于30em 时*/
+@media only screen and (max-width: 30em) {
+    /*在小屏里隐藏掉一些元素*/
+    header .top .tel,
+    header .top ul li:nth-child(3),
+    header .top ul li:nth-child(4) {
+        display: none;
+    }
+}
+/*这里写样式时首先写好巨屏,然后再在媒体查询中向向小屏进行兼容设置。 当然，加入这个是一个主要在移动端上的网站,那建议就反过来写了*/
+
+header .main {
+    padding: 0;
+}
+header .main .brand {
+    float: left;
+    padding: 1rem 1.5rem 0;
+}
+
+header .main ul {
+    text-align: right;
+}
+
+header .main ul li {
+    /*让li从竖排变成横排,并且加一个左边框*/
+    display: inline-block;
+    border-left: 1px solid #f0ede9;
+}
+
+header .main ul li a {
+    display: inline-block;
+    /*这里的padding相对例子的改了小了0.2rem,来避免没到媒体查询就产生元素换行*/
+    padding: 0 2.3rem;
+    line-height: 5.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #7c7a65;
+    text-decoration: none;
+}
+/*导航链接 指中、被激活 时 样式*/
+header .main ul li a:hover,
+header .main ul li a:active {
+    color: #ffb300;
+    background-color: #f8f6f1;
+}
+/*添加中屏的媒体查询*/
+@media only screen and (max-width: 50em) {
+    /*清除浮动,设置成块级元素(独占一行),去除内填充,居中显示*/
+    header .main .brand {
+        float: none;
+        display: block;
+        padding: 0;
+        margin: 1.5rem auto 0.5rem;
+        text-align: center;
+    }
+    header .main ul {
+        text-align: center;
+    }
+    /*去除li的边框*/
+    header .main ul li {
+        border: none;
+    }
+    header .main ul li a {
+        padding: 0 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 30em) {
+    header .main ul li {
+        line-height: 3rem;
+    }
+    header .main ul li:first-child {
+        /*隐藏掉第一个li(首页菜单项)*/
+        display: none;
+    }
+    header .main ul li a {
+        /*去掉字体加粗*/
+        font-weight: normal;
+        padding: 0 0.5rem;
+    }
+}
+
+/*网站主要内容*/
+.container {
+    width: 100%;
+}
+/*交易信息*/
+.transaction {
+    width: 100%;
+    background-color: #7c7365;
+}
+
+.trans-content {
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+.trans-data {
+    float: left;
+    padding: 1rem;
+    text-align: left;
+}
+
+.trans-data span {
+    display: inline-block;
+    line-height: 3rem;
+    color: #fff;
+}
+
+.trans-data span.trans-money {
+    font-size: 2.2rem;
+    color: #f90;
+    /*字幕空隙:3px*/
+    letter-spacing: 3px;
+    margin: 0 1rem;
+    padding: 0 1rem;
+    /*边框(圆角)半径:3px*/
+    border-radius: 3px;
+    /*这里用到的rgba(红,绿,蓝,透明度),设置的是背景色的透明度*/
+    /*而不用opacity属性(这个属性设置的是整个元素的透明度)*/
+    background-color: rgba(255,255,255,0.9);
+    /*盒子阴影:水平位置1px 垂直位置2px 模糊距离1px 颜色#333 内阴影*/
+    box-shadow: 1px 2px 1px #333 inset;
+}
+
+.trans-report {
+    text-align: right;
+}
+
+.trans-report a {
+    display: inline-block;
+    padding: 1rem;
+    line-height: 3rem;
+    color: #fff;
+}
+@media only screen and (max-width: 50em) {
+    .trans-data {
+        padding: 1rem 0.5rem;
+    }
+    .trans-data span {
+        font-size: 1.2rem;
+    }
+    .trans-data span.trans-money {
+        font-size: 1.6rem;
+        margin: 0;
+        padding: 0;
+        /*从父元素继承字符间距*/
+        letter-spacing: inherit;
+        box-shadow: none;
+        /*背景颜色:透明*/
+        background: transparent;
+    }
+    .trans-report a {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 30em) {
+
+    .transaction {
+        padding: 0.5rem 0;
+    }
+
+    .trans-data, .trans-report {
+        float: none;
+        text-align: center;
+    }
+
+    .trans-data, .trans-report a {
+        padding: 0;
+    }
+}
+/*滚动广告*/
+.ad {
+    /*因为这里比较难做,所以先隐藏了,最后要做的时候再把这个样式注释掉就可以了*/
+    /*display:none;*/
+}
+
+/*平台特色(功能)*/
+.feature {
+    width: 90%;
+    margin: 2rem auto;
+    /*这里把字体大小设置0,来消除一些换行符引起的空白字符空隙,不然下面的calc计算有点麻烦了*/
+    font-size: 0;
+}
+
+.feature .item {
+    /*划分成3等分,然后-3rem中,有2rem是左右的padding的,还有1rem是margin-left的*/
+    /*calc是css3的新特性,可以进行长度计算。*/
+    /*下面的3rem是:padding的1rem+*/
+    width: calc(33.333333% - 3rem);
+    display: inline-block;
+    background-color: #fff;
+    font-size: 1.4rem;
+    padding: 1rem;
+    box-shadow: 0 0 4px #ccc;
+}
+
+.feature .item + .item {
+    /*除了第一个item,其他都加上1.5rem的margin*/
+    margin-left: 1.5rem;
+}
+
+.feature .item h3 {
+    /*display设置成inline-block就可以设置宽度了*/
+    display: inline-block;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    /*垂直对齐:上 */
+    vertical-align: top;
+    font-size: 3.3rem;
+    text-align: center;
+    color: #f90;
+}
+.feature .item p {
+    /*display设置成inline-block就可以和其他的元素在同一行了*/
+    display: inline-block;
+    width: 55%;
+    margin: 0;
+    padding: 0;
+    color: #999;
+}
+/*中屏、屏媒体查询*/
+@media only screen and (min-width: 30.0625em) and (max-width: 50em) {
+    .feature .item h3,
+    .feature .item p {
+        /*显示为块元素(各自独占一行)*/
+        display: block;
+        width: 100%;
+        font-size: 2.6rem;
+        text-align: center;
+    }
+    .feature .item p {
+        /*元素样式的就近原则p标签的字体大小属性会应用到这里的1.2rem而不是上面的2.6rem*/
+        font-size: 1.2rem;
+    }
+}
+@media only screen and (max-width: 30em) {
+    .feature {
+        /*减少外边距,居中*/
+        width: 96%;
+        margin: 1rem auto;
+    }
+    .feature .item {
+        /*让每个item独占一行*/
+        display: block;
+        width: auto;
+    }
+    .feature .item + .item {
+        margin: 1rem 0 0;
+    }
+}
+
+
+/* 最新公告 */
+.notice {
+    width: 90%;
+    margin: 2rem auto;
+    font-size: 1.4rem;
+    line-height: 3rem;
+    background-color: #fff;
+    box-shadow: 0 0 4px #ccc;
+}
+
+.notice a {
+    float: left;
+    display: inline-block;
+    width: 70%;
+    margin-left: 2rem;
+    text-decoration: none;
+}
+/*这里的.notice a:first-child其实就是.notice里面的第一个a子元素(2015..元旦期间...)*/
+.notice a:first-child {
+    /*用省略号来截断文字(文字溢出显示方式)*/
+    text-overflow: ellipsis;
+    /*隐藏移除内容*/
+    overflow: hidden;
+    /*文字不换行*/
+    white-space: nowrap;
+}
+/*用伪元素去在a元素的第一个子元素的前面添加内容*/
+/*这个可以单独设置样式,而且不会受到.notice a:first-child的样式的影响*/
+.notice a:first-child:before {
+    /*内容为: 最新公告  (\00a0是不换行的空格字符)*/
+    content: '最新公告: \00a0\00a0';
+    color: #aaa;
+}
+
+.notice a span {
+    color: #999;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.notice a.more {
+    float: right;
+    width: auto;
+    margin-right: 2rem;
+    color: #f90;
+}
+
+@media only screen and (max-width: 30em) {
+    .notice {
+        width: 96%;
+        margin: 1rem auto;
+        font-size: 1.2rem;
+    }
+    .notice a {
+        margin-left: 1rem;
+    }
+    .notice a span {
+        display: none;
+    }
+}
+
+/* 产品列表 */
+.product {
+    /*水平居中*/
+    width: 90%;
+    margin: 2rem auto;
+    font-size: 1.4rem;
+    background-color: #f5f9fa;
+    /*设置上边框*/
+    border-top: 2px solid #f90;
+    box-shadow: 0 0 4px #ccc;
+}
+
+.product h2 {
+    /*这里加了float,所以它的父元素要清除浮动避免来解决浮动产生的高度塌陷*/
+    float: left;
+    width: 20%;
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: normal;
+    color: #635c51;
+}
+
+.product h2 em {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+}
+
+.product h2 em:first-child {
+    margin-top: 4rem;
+}
+
+.product .product-content {
+    /*经典两栏左右布局;上面产品总述float:left;width:20%;这里产品内容float:right;width:79.5%;*/
+    float: right;
+    width: 79.5%;
+    border-left: 1px solid #eee;
+    background-color: #fff;
+}
+
+.product .product-content .item {
+    width: 100%;
+}
+
+.product .product-content .item + .item {
+    border-top: 1px solid #eee;
+}
+/*在右边栏布局里,再分栏布局*/
+/*占比是h3:30%;.info:48%;.buy:calc(22%-4rem)*/
+.product .product-content .item h3 {
+    float: left;
+    width: 30%;
+    margin: 1.5rem 0;
+    font-size: 1.4rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+.product .product-content .item h3 em {
+    margin-right: 0.5rem;
+    font-size: 3.6rem;
+    font-style: normal;
+    color: #8b999d;
+}
+
+.product .product-content .item h3 i {
+    display: block;
+    font-size: 1.2rem;
+    font-style: normal;
+    color: #999;
+}
+
+.product .product-content .item .info {
+    float: left;
+    width: 48%;
+    padding: 1rem;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    font-size: 14px;
+}
+
+.product .product-content .item .info p {
+    float: left;
+    display: inline-block;
+    text-align: center;
+    width: 56%;
+}
+
+.product .product-content .item .info p:last-child {
+    width: 40%;
+}
+
+.product .product-content .item .info p span {
+    display: block;
+    font-size: 2.4rem;
+    color: #f90;
+}
+
+.product .product-content .item .info p span i {
+    font-size: 1.2rem;
+    font-style: normal;
+    color: #999;
+}
+
+.product .product-content .item .buy {
+    float: left;
+    width: calc(22% - 4.4rem);
+    padding: 1rem;
+}
+
+.product .product-content .item .buy a {
+    display: block;
+    width: 90%;
+    margin: 1.5rem auto;
+    max-width: 12rem;
+    line-height: 4rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #f90;
+    /*边框圆角半径:5px*/
+    border-radius: 5px;
+}
+
+/*鼠标滑过和点击后的样式*/
+.product .product-content .item .buy a:hover,
+.product .product-content .item .buy a:active {
+    background-color: #ffc468;
+}
+
+.product .product-content .item .buy a.disabled {
+    background-color: #ccc !important;
+    cursor: not-allowed;
+}
+
+@media only screen and (max-width: 50em) {
+    .product h2 {
+        float: none;
+        width: 100%;
+        margin-top: 2rem;
+        font-size: 2.2rem;
+    }
+    .product h2 em:first-child {
+        margin-top: 0;
+    }
+    .product h2 em {
+        display: inline;
+        font-size: 1.2rem;
+    }
+    .product .product-content {
+        float: none;
+        width: 100%;
+    }
+    .product .product-content .item h3 {
+        margin-bottom: 0
+    }
+    .product .product-content .item h3 em {
+        font-size: 2.4rem;
+    }
+    .product .product-content .item .info {
+        padding: 1rem 1rem 0;
+        font-size: 1.2rem;
+    }
+    .product .product-content .item .info p span {
+        font-size: 2rem;
+    }
+    .product .product-content .item .buy a {
+        margin: 0.5rem auto;
+    }
+}
+
+@media only screen and (max-width: 30em) {
+    .product {
+        width: 96%;
+    }
+    .product h2 em:first-child:before {
+        content: " ";
+        display: table;
+    }
+    .product .product-content .item h3 em {
+        font-size: 2rem;
+        margin-right: 0;
+    }
+    .product .product-content .item .info {
+        float: right;
+        width: 70%;
+        padding: 1rem 0;
+        border: none;
+    }
+    .product .product-content .item .info p span {
+        font-size: 1.8rem;
+    }
+    .product .product-content .item .buy {
+        clear: both;
+        float: none;
+        width: 100%;
+        padding: 1rem 0 2rem;
+    }
+    .product .product-content .item .buy a {
+        margin-top: 0;
+        max-width: 26rem;
+    }
+}
+
+
+/*底部导航*/
+.footer {
+    padding: 3rem;
+    background-color: #fff;
+    border-top: 2px solid #eee;
+}
+/*底部导航内容居中*/
+.footer-content {
+    width: 90%;
+    margin: 0 auto;
+}
+/*logo*/
+.footer-content .brand {
+    float:left;
+    /*由于这里已经float了,所以block也不会占一行,而且可以设置宽高度*/
+    display:block;
+    /*设置灰色(也就是黑白),加上-webkit-前缀是为了兼容IE*/
+    -webkit-fiter:grayscale(100%);
+    width: 20%;
+    height: 35px;
+    background: url('../img/logo@1x.png') no-repeat;
+    background-size: 150px 35px;
+}
+/*导航*/
+.footer-content ul {
+    /*这里有5个ul,全部都左浮动,占剩下的80%,每个15%,还有%1的间隔*/
+    float:left;
+    width:15%;
+}
+
+.footer-content ul li {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+}
+/*注意这里li.title是有title这个class的li*/
+/*而li .title(中间有空格)的是li里面带有title这个class的元素*/
+.footer-content ul li.title {
+    font-size: 1.6rem;
+    line-height: 3rem;
+}
+
+@media only screen and (max-width: 50em) {
+    .footer-content .brand {
+        /*隐藏*/
+        display: none;
+    }
+    .footer-content ul {
+        width: 20%;
+    }
+    .footer-content ul li {
+        /*减少字体大小和行高*/
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+    .footer-content ul li.title {
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 30em) {
+    .footer-content {
+        width: 98%;
+    }
+    .footer-content ul li.title {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+}
+
+
+/*网站底部*/
+footer {
+    width: 100%;
+    padding: 3rem 0 5rem;
+    background-color: #ededed;
+}
+
+footer ul {
+    text-align: center;
+}
+
+footer ul li {
+    display: inline-block;
+}
+/*由于以下图片都是绝对的固定大小,所以这里的单位要用回px!!!!*/
+/*给底部图标设置同类样式*/
+/*******************************************************************************
+*这里用到的是CSS Sprite (CSS精灵),是一种网页图片应用处理方式。他允许将一个页面设计到的
+*所有图片都包含到一张大图中去。这样当访问该页面的时载入的图片就不会一幅幅地慢慢显示出来。
+*能加速，减少字节和文件数
+*但是要用ps等工具来精确测量
+*******************************************************************************/
+footer ul li .icon {
+    display: inline-block;
+    /*把文字向左移出显示区域。*/
+    text-indent: -999rem;
+    /*给每个图标之间设置间隔*/
+    margin-right: 1.5rem;
+    background: url('../img/cert1.png') no-repeat;
+    background-size:466px 447px;
+    overflow: hidden;
+}
+/*给底部图标设置个性样式*/
+footer ul li .icon-zfywxkz {
+    width: 38px;
+    height: 27px;
+    background-position: -369px -45px;
+}
+
+footer ul li .icon-picrk {
+    width: 78px;
+    height: 27px;
+    background-position: -110px -96px;
+}
+
+footer ul li .icon-visayz {
+    width: 36px;
+    height: 27px;
+    background-position: -426px -90px;
+}
+
+footer ul li .icon-vsjmfw {
+    width: 63px;
+    height: 27px;
+    margin-right: 13px;
+    background-position: -401px -186px;
+}
+
+footer ul li .icon-wlgs {
+    width: 22px;
+    height: 27px;
+    background-position: -48px -48px;
+}
+
+footer ul li .icon-rzcx {
+    width: 75px;
+    height: 27px;
+    background-position: 0 -320px;
+}
+
+footer ul li .icon-gs {
+    width: 30px;
+    height: 30px;
+    margin-right: 0;
+    background: url('../img/cert2.png') no-repeat;
+    /*背景图像大小(相对宽高设置的缩放,这里是30:30,也就是100%),所以其实不用也可以的*/
+    background-size: 30px;
+}
+
+footer p{
+    text-align: center;
+    color: #999;
+}
