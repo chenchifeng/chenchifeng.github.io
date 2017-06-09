@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://chenchifeng.github.io">
-  <title>Tag: bat | aFung&#39;s Blog</title>
+  <title>aFung&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个创造给自己的空间,远离其他繁杂的条条!">
+  <meta name="description" content="RollSeg 介绍RollSeg 是一个使用原生 JavaScript 制作的图片轮播器插件。  准备工作 确定一个显示框，在作为显示框的 HTML 标签上添加 id —— “rs-space”。  在显示框内定义一个图片队列，在作为图片队列的 HTML 标签上添加 id —— “rs-outer”。  在图片队列内插入若干个轮播图片，每个轮播图片元素上添加 class —— “rs-seg”。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="aFung&#39;s Blog">
-<meta property="og:url" content="http://chenchifeng.github.io/tags/bat/index.html">
+<meta property="og:url" content="http://chenchifeng.github.io/other/rollseg/readme.html">
 <meta property="og:site_name" content="aFung&#39;s Blog">
-<meta property="og:description" content="一个创造给自己的空间,远离其他繁杂的条条!">
+<meta property="og:description" content="RollSeg 介绍RollSeg 是一个使用原生 JavaScript 制作的图片轮播器插件。  准备工作 确定一个显示框，在作为显示框的 HTML 标签上添加 id —— “rs-space”。  在显示框内定义一个图片队列，在作为图片队列的 HTML 标签上添加 id —— “rs-outer”。  在图片队列内插入若干个轮播图片，每个轮播图片元素上添加 class —— “rs-seg”。">
+<meta property="og:updated_time" content="2017-05-30T12:06:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="aFung&#39;s Blog">
-<meta name="twitter:description" content="一个创造给自己的空间,远离其他繁杂的条条!">
+<meta name="twitter:description" content="RollSeg 介绍RollSeg 是一个使用原生 JavaScript 制作的图片轮播器插件。  准备工作 确定一个显示框，在作为显示框的 HTML 标签上添加 id —— “rs-space”。  在显示框内定义一个图片队列，在作为图片队列的 HTML 标签上添加 id —— “rs-outer”。  在图片队列内插入若干个轮播图片，每个轮播图片元素上添加 class —— “rs-seg”。">
   
     <link rel="alternative" href="/atom.xml" title="aFung&#39;s Blog" type="application/atom+xml">
   
@@ -140,59 +141,74 @@
 </nav>
 
       <div class="body-wrap">
-        
-  
-  
+        <article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+    <div class="article-entry" itemprop="articleBody">
       
+        <h3 id="RollSeg-介绍"><a href="#RollSeg-介绍" class="headerlink" title="RollSeg 介绍"></a>RollSeg 介绍</h3><p>RollSeg 是一个使用原生 JavaScript 制作的图片轮播器插件。</p>
+<hr>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li><p>确定一个显示框，在作为显示框的 HTML 标签上添加 id —— “rs-space”。</p>
+</li>
+<li><p>在显示框内定义一个图片队列，在作为图片队列的 HTML 标签上添加 id —— “rs-outer”。</p>
+</li>
+<li><p>在图片队列内插入若干个轮播图片，每个轮播图片元素上添加 class —— “rs-seg”。</p>
+</li>
+<li><p>定义一组切换按钮，注意，切换按钮对应轮播图片，在切换按钮上添加 class —— “rs-btn”。</p>
+</li>
+<li><p>在页面中引入插件后，使用如下 JavaScript 语句启动插件：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RS(5, &#123; width: &quot;200px&quot;, height: &quot;200px&quot; &#125;, 8000, 70, function(e, i) &#123;</div><div class="line">    console.log(i);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>  第一个参数是图片个数，第二个参数是一个设置宽度和高度的对象，第三个参数是设置图片轮播的时间长度(毫秒计)，第四个参数是图片移动速度(是一个数值，值越小速度越快)，第五个参数是每次图片切换后执行的函数，函数内可以访问一个代表当前图片元素节点的参数(第一个参数)和一个当前显示图片索引值的参数(第二个参数)。</p>
+</li>
+</ul>
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/11/bat批处理脚本快速配置JSP-Java环境变量/" class="archive-article-date">
-  	<time datetime="2017-05-10T16:07:09.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-05-11</time>
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/other/rollseg/readme.html" class="archive-article-date">
+  	<time datetime="2017-06-08T17:48:05.261Z" itemprop="datePublished"><i class="icon-clock"></i>2017-06-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/11/bat批处理脚本快速配置JSP-Java环境变量/">bat批处理脚本快速配置JSP/Java环境变量</a>
-    </h1>
-  
+      
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bat/">bat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境变量/">环境变量</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/技术/">技术</a><a class="article-category-link" href="/categories/技术/技巧/">技巧</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
 
 
       </div>
@@ -220,7 +236,7 @@
 		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
