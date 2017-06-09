@@ -11,7 +11,7 @@ function aa(data){
         wt = wtData.weather,
         day = wtData.dayPictureUrl,
         night = wtData.nightPictureUrl;
-    weather.innerHTML = city + " ,<br> " + date + " ,<br> " + tem + " ,<br> " + wt + "<br> 日间: <img src="" + day + ""> 晚间: <img src="" + night + "">";
+    weather.innerHTML = city + " ,<br /> " + date + " ,<br/> " + tem + " ,<br /> " + wt + "<br /> 日间: <img src='" + day + "'/> 晚间: <img src='" + night + "'/>";
 
     console.log(results);
     console.log(city);
