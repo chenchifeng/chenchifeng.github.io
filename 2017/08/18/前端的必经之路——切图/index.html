@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://chenchifeng.github.io">
+  <title>前端的必经之路——切图 | aFung&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="获取信息  尺寸信息 -&amp;gt; 测量  所有数字都要测量  宽度,高度">
+<meta name="keywords" content="切图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端的必经之路——切图">
+<meta property="og:url" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/index.html">
+<meta property="og:site_name" content="aFung&#39;s Blog">
+<meta property="og:description" content="获取信息  尺寸信息 -&amp;gt; 测量  所有数字都要测量  宽度,高度">
+<meta property="og:image" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/media/c513bcb1f39b6ecc7a2a274c3f285878.png">
+<meta property="og:image" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/media/bcbef297805e1e6654b938751f7273c2.png">
+<meta property="og:image" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/media/ac82bdfa8fd53feca6f67573d0095240.png">
+<meta property="og:image" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/media/efa17f99f8d672205f913f1cdc22b850.png">
+<meta property="og:image" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/media/8d22ff35a33b8d25503f8b30188f032d.png">
+<meta property="og:image" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/media/f936c3b9bdd4a9f043ac3ef56d006ca2.png">
+<meta property="og:image" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/media/c5869391f6361245f4b2d9b2e34f83d3.png">
+<meta property="og:image" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/media/e64a46becca301b458d3fc8aee7eff6e.png">
+<meta property="og:image" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/media/c1d6eb3daacf62984e192ce7244eca89.png">
+<meta property="og:updated_time" content="2017-08-27T10:07:13.939Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端的必经之路——切图">
+<meta name="twitter:description" content="获取信息  尺寸信息 -&amp;gt; 测量  所有数字都要测量  宽度,高度">
+<meta name="twitter:image" content="http://chenchifeng.github.io/2017/08/18/前端的必经之路——切图/media/c513bcb1f39b6ecc7a2a274c3f285878.png">
+  
+    <link rel="alternative" href="/atom.xml" title="aFung&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">ChenChiFeng</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一天进步一点</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">Hello World!</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/chenchifeng" title="github">github</a>
+		        
+					<a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=vN-U2dLf1NXa2dLbhYn8zc2S39PR" title="mail">mail</a>
+		        
+					<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/chancifung" title="linkedin">linkedin</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">ChenChiFeng</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/images/avatar.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">ChenChiFeng</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一天进步一点</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔/">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/chenchifeng" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=vN-U2dLf1NXa2dLbhYn8zc2S39PR" title="mail">mail</a>
+			        
+						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/chancifung" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-前端的必经之路——切图" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端的必经之路——切图
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>获取信息</p>
+</li>
+<li><p>尺寸信息 -> 测量</p>
+<ol>
+<li><p>所有数字都要测量</p>
+<ol>
+<li>宽度,高度<a id="more"></a></li>
+<li><p>Padding,margin</p>
+</li>
+<li><p>Border</p>
+</li>
+<li><p>Position</p>
+</li>
+<li><p>Text-size</p>
+</li>
+<li><p>Line-Height</p>
+</li>
+<li><p>背景图位置</p>
+</li>
+</ol>
+</li>
+<li><p>测量方法</p>
+<ol>
+<li><p>放大画布 -> <strong>矩形选框工具</strong> -> 画一个矩形框 -><br>右侧信息面板(F8)就可以读取到宽高。</p>
+</li>
+<li><p>文字大小</p>
+<ol>
+<li><p>文字图层: 看图层信息(文字属性面板可以读取)</p>
+</li>
+<li><p>其他: 用选框工具测量,一般选大些的字测(有误差)</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>颜色信息 -> 取色</p>
+</li>
+<li><p>切图之前</p>
+</li>
+<li><p>那些事需要切出来的</p>
+<ol>
+<li><p>修饰性的(一般用在background 属性)</p>
+<ol>
+<li><p>图标(icon),Logo</p>
+</li>
+<li><p>有特殊效果的按钮,文字等</p>
+</li>
+<li><p>非纯色的背景</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="media/c513bcb1f39b6ecc7a2a274c3f285878.png" alt=""></p>
+<ol>
+<li><p>内容性的(一般用在img标签)</p>
+<ol>
+<li><p>Banner(横幅标题),广告图片</p>
+</li>
+<li><p>文章中的一些配图</p>
+</li>
+<li><p>从服务器拉取过来,其实不用切图的，用img占位就可以了。</p>
+</li>
+</ol>
+</li>
+<li><p>切出来的图片存为哪种类型？</p>
+<ol>
+<li><p>修饰性的</p>
+<ol>
+<li><p>PNG24（IE6不支持半透明）</p>
+</li>
+<li><p>PNG8 （不支持半透明）</p>
+</li>
+</ol>
+</li>
+<li><p>内容性的</p>
+<ol>
+<li>一般存为JPG (压缩)</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>  <strong>点几下左边的眼睛看看就知道哪个是哪个了!!!</strong></p>
+</blockquote>
+<ol>
+<li><p>切图流程</p>
+</li>
+<li><p>隐藏文字只留背景</p>
+<ol>
+<li><p>文字为独立图层,隐藏文字图层</p>
+<ol>
+<li><p>找到文字图层 (用移动工具 或者 筛选)</p>
+</li>
+<li><p>去掉眼睛图标</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="media/bcbef297805e1e6654b938751f7273c2.png" alt=""></p>
+<p>-></p>
+<p><img src="media/ac82bdfa8fd53feca6f67573d0095240.png" alt=""></p>
+<p>类型筛选出所有文字类型,按住shift点击第一个,再点击最后一个,右击左边像眼睛,隐藏本图层</p>
+<ol>
+<li><p>若文字和背景合并, 拉伸/平铺背景覆盖文字</p>
+<ol>
+<li><p>矩形选框工具</p>
+</li>
+<li><p>自由变换(Ctrl+T)</p>
+<p><img src="media/efa17f99f8d672205f913f1cdc22b850.png" alt=""></p>
+</li>
+<li><p>使用移动工具 按Alt (+shift就能水平了)</p>
+<p><img src="media/8d22ff35a33b8d25503f8b30188f032d.png" alt=""></p>
+</li>
+</ol>
+</li>
+<li><p>切图 PNG24</p>
+<ol>
+<li><p>移动工具选中所需图层(要切出来的图)(按住Ctrl多选)</p>
+</li>
+<li><p>右键合并图层(Ctrl+E) //单图层时不用合并</p>
+</li>
+<li><p>再右键复制图层到性文件(或直接拖至已有文件。(例如上一个新建的还有很多位置)<br>新建Ctrl+N ) 命名为适合的名字</p>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="media/f936c3b9bdd4a9f043ac3ef56d006ca2.png" alt=""></p>
+<p>-></p>
+<p><img src="media/c5869391f6361245f4b2d9b2e34f83d3.png" alt=""></p>
+<p>-></p>
+<p><img src="media/e64a46becca301b458d3fc8aee7eff6e.png" alt=""></p>
+<ol>
+<li>裁剪画布: 矩形选框 选中需要的部分 -> 图像 -> 裁剪</li>
+</ol>
+<p>(或者按着Ctrl点击图层缩略图/矩形框选择 -> 裁剪工具 -> Enter键 * 2确认)</p>
+<p>所有拖在一张后,直接多张一起导出。</p>
+<ol>
+<li>切图 PNG8</li>
+</ol>
+<blockquote>
+<p>  带背景切 (例如一些小图标)</p>
+</blockquote>
+<ol>
+<li><p>合并(可见)图层 (Shift+Ctrl+E) [得到整一张图]</p>
+</li>
+<li><p>矩形选框工具选择内容</p>
+</li>
+<li><p>魔棒工具去除多余部分</p>
+</li>
+</ol>
+<blockquote>
+<p>  -从选区中减去:按住Alt</p>
+</blockquote>
+<ol>
+<li><p>把最终选好的拖到已有文件</p>
+</li>
+<li><p>可平铺背景的切图</p>
+<ol>
+<li><p>用矩形选框工具选取一块区域</p>
+</li>
+<li><p>复制粘贴到新文件中 (Ctrl+C -> Ctrl+N 预测剪切板,画布高度++, 背景透明<br>-> Ctrl+V)</p>
+</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>  平铺内容 充满 文件的宽(x轴) 或高(y轴)。不然拉伸的时候就GG了</p>
+<p>  <a href="./media/image9.png">./media/image9.png</a></p>
+<p>  <a href="./media/image10.png">./media/image10.png</a></p>
+</blockquote>
+<ol>
+<li><strong>切片工具</strong></li>
+</ol>
+<blockquote>
+<p>  适用于可以一刀切的活动页</p>
+</blockquote>
+<ol>
+<li><p>拉参考线</p>
+</li>
+<li><p>选择切片工具</p>
+</li>
+<li><p>点击”基于参考线的切片”按钮 （就会变为切片了）</p>
+</li>
+<li><p>选择“切片选择工具”，双击切片重命名</p>
+</li>
+<li><p>保存： 文件 –> 存储为Web使用格式 (Ctrl+Alt+Shift+S) -> 缩小内容,全选切片<br>-> 统一设置格式(jpg,品质- -) –> 存储。</p>
+</li>
+</ol>
+<blockquote>
+<p>  <a href="./media/image11.png">./media/image11.png</a></p>
+<p>  <a href="./media/image12.png">./media/image12.png</a></p>
+<p>  <a href="./media/image13.png">./media/image13.png</a></p>
+</blockquote>
+<ol>
+<li><p>保存</p>
+</li>
+<li><p>存储所需内容</p>
+<ol>
+<li><p>复制 -> 新建 -> 粘贴 (或拖动内容至新文件)</p>
+</li>
+<li><p>存储为Web所用格式 (Alt+Shift+Ctrl+S)</p>
+</li>
+</ol>
+</li>
+<li><p>保存哪种格式?</p>
+<ol>
+<li><p>JPG :</p>
+<ol>
+<li><p>适合色彩丰富,没有透明度要求。</p>
+</li>
+<li><p>设置：品质降低到60~80左右。</p>
+</li>
+</ol>
+</li>
+<li><p>PNG8 :</p>
+<ol>
+<li><p>适合色彩不太丰富（无论有无透明度要求）。</p>
+</li>
+<li><p>设置： 杂边 - 无 ， 扩散 - 无仿色。</p>
+</li>
+<li><p>如果记不住，那就把这个设置保存下来方便下一次用</p>
+<p><img src="media/c1d6eb3daacf62984e192ce7244eca89.png" alt=""></p>
+</li>
+</ol>
+</li>
+<li><p>PNG24</p>
+<ol>
+<li><p>适合 图片有<em>半透明</em>需求是</p>
+</li>
+<li><p>对图片无压缩，文件比较大</p>
+</li>
+</ol>
+</li>
+<li><p>PSD</p>
+</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>  为了保证图片质量</p>
+</blockquote>
+<ol>
+<li><p>（每个文件都）保留一份PSD，在PSD上进行修改。</p>
+</li>
+<li><p>修改和维护</p>
+</li>
+</ol>
+<blockquote>
+<ol>
+<li><p>要放更多的图片 –> 更改画布大小 (定位选在左上角)</p>
+<p><a href="./media/image15.png">./media/image15.png</a></p>
+</li>
+<li><p>移动图标</p>
+<p>a) 图标为独立图层 -> 使用移动工具拖动</p>
+<p>b) 图标为非独立图层 -> 用选区工具选中图标区域 -> 用移动工具拖动图标<br>(Ctrl+X再Ctrl+V就可以把在同一图层的分开了)</p>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li><p>裁剪掉多余画布 -> 裁剪工具</p>
+</li>
+<li><p>注意: 维护PNG8图片时(标题栏有”索引”) ,需更改颜色模式为RGB颜色</p>
+</li>
+<li><p>优化和合并</p>
+<ol>
+<li>Sprite（雪碧图）</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>  把多个小图标，拼起来放在一张图，保持一定的间隔，然后使用的时候根据图片位置使用。</p>
+<p>  减少文件请求，提升网页加载速度。</p>
+</blockquote>
+<ol>
+<li><p>压缩</p>
+<ol>
+<li><p>无损</p>
+</li>
+<li><p>有损</p>
+</li>
+</ol>
+</li>
+<li><p>合并 – 排列</p>
+<ol>
+<li><p>图片之间保留空隙</p>
+</li>
+<li><p>优化</p>
+<ol>
+<li><p>平衡图片的大小与质量</p>
+</li>
+<li><p>压缩工具</p>
+<ol>
+<li><p>无损 Minimage （基于Node的）</p>
+</li>
+<li><p>有损 TinyPng （在线网站）</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>排列</p>
+<ol>
+<li><p>横向排列</p>
+</li>
+<li><p>纵向排列</p>
+</li>
+<li><p>根据实际情况选择</p>
+</li>
+<li><p>紧密一些排列，但是不可以太乱</p>
+</li>
+</ol>
+</li>
+<li><p>分类</p>
+<ol>
+<li><p>属于一个模块的图片进行合并</p>
+</li>
+<li><p>大小相近的图片进行合并</p>
+</li>
+<li><p>色彩相近的图片合并</p>
+</li>
+<li><p>综合以上方式合并</p>
+</li>
+</ol>
+</li>
+<li><p>合并推荐</p>
+<ol>
+<li><p>有状态图标合并</p>
+</li>
+<li><p>只本页用到的图片合并</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>浏览器兼容方案</p>
+</li>
+</ol>
+<blockquote>
+<p>  <a href="./media/image16.png">./media/image16.png</a></p>
+</blockquote>
+<ol>
+<li>网页设计命名规范</li>
+</ol>
+<p>一张完整的页面往往包含很多个部分，例如导航、Banner、菜单、主体、版底和Logo等，使用Photoshop设计页面时按照规定的准则命令图层或图层组，不仅有利于快速查找和修改页面效果，还可以大幅度提高切图和后期制作的工作效率。下图是网页的基本框架和结构，设计网页时，最好将同一区域的图层整合在一起。  </p>
+<p>下面是一些常用的CSS标准化设计命名，在使用Photoshop设计页面时，我们也可以按照英文名来命令每一个具体的部分。</p>
+<p>头：header</p>
+<p>内容：content/container</p>
+<p>页脚：footer</p>
+<p>导航：nav</p>
+<p>子导航：subnav</p>
+<p>侧栏：sidebar</p>
+<p>栏目：column</p>
+<p>广告条：banner</p>
+<p>主体：main</p>
+<p>左/右/中：left /right /center</p>
+<p>菜单：menu</p>
+<p>子菜单：submenu</p>
+<p>注册：regsiter</p>
+<p>登录：login</p>
+<p>标志：logo</p>
+<p>按钮：btn</p>
+<p>图标：icon</p>
+<p>热点：hot</p>
+<p>新闻：news</p>
+<p>下载：download</p>
+<p>搜索：search</p>
+<p>滚动条：scroll</p>
+<p>标签页：tab</p>
+<p>文章列表：list</p>
+<p>小技巧：tips</p>
+<p>标题：title</p>
+<p>加入：joinus</p>
+<p>标签页：tab</p>
+<p>文章列表：list</p>
+<p>注释：note</p>
+<p>友情链接：friendlink</p>
+<p>服务：service</p>
+<p>状态：status</p>
+<p>合作伙伴：partner</p>
+<p>摘要：summary</p>
+<p>版权：copyright</p>
+<p>指南：guild</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/08/18/前端的必经之路——切图/" class="archive-article-date">
+  	<time datetime="2017-08-18T11:33:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-08-18</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/切图/">切图</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/技术/">技术</a><a class="article-category-link" href="/categories/技术/前端/">前端</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/05/快速搭建CMS(内容管理系统)网站/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">快速搭建CMS(内容管理系统)网站</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 ChenChiFeng
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+            <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">Play</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/CMS/" style="font-size: 10px;">CMS</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/bat/" style="font-size: 10px;">bat</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/代码托管/" style="font-size: 10px;">代码托管</a> <a href="/tags/切图/" style="font-size: 10px;">切图</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/调试工具/" style="font-size: 10px;">调试工具</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/chenchifeng">具体请看</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://zifun.cc/other/ResponsiveWeb/src">响应式实战</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://zifun.cc/other/weather">天气预报jsonp</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">计算机专业应届生&lt;br/&gt;Want to be a Front-End Developer&lt;br/&gt;联系方式:13059327127&lt;br/&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=vN-U2dLf1NXa2dLbhYn8zc2S39PR&quot; style=&quot;text-decoration:none;&quot;&gt;&lt;img src=&quot;http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_02.png&quot;/&gt;&lt;/a&gt;</div>
+  	  	
+    	</section>
+    
+  </div>
+
+</div>
+
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
