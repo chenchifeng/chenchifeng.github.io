@@ -6,17 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://chenchifeng.github.io">
-  <title>aFung&#39;s Blog</title>
+  <title>开发者调试工具的使用 | aFung&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个创造给自己的空间,远离其他繁杂的条条!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="aFung&#39;s Blog">
-<meta property="og:url" content="http://chenchifeng.github.io/index.html">
+  <meta name="description" content="如果没有控制台,那就好像瞎子那样的在编码。 学任何一个编程语言,肯定要会调试.才能只要错误出在哪. 按F12或者Ctrl+Shift+I,或者右键-&amp;gt;检查,打开控制台. 点击  (元素选择器),他会变蓝,然后就能选中(拾取)某个元素,定位查看这个原来素的信息/代码. 点击  (移动设备模式),就能编程手机或者平板的模式,(这个适合响应式设计的时候调试) Elements(元素):页面上所有的HTM">
+<meta name="keywords" content="调试工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发者调试工具的使用">
+<meta property="og:url" content="http://chenchifeng.github.io/2017/08/05/关于开发者调试工具(控制台)使用/index.html">
 <meta property="og:site_name" content="aFung&#39;s Blog">
-<meta property="og:description" content="一个创造给自己的空间,远离其他繁杂的条条!">
+<meta property="og:description" content="如果没有控制台,那就好像瞎子那样的在编码。 学任何一个编程语言,肯定要会调试.才能只要错误出在哪. 按F12或者Ctrl+Shift+I,或者右键-&amp;gt;检查,打开控制台. 点击  (元素选择器),他会变蓝,然后就能选中(拾取)某个元素,定位查看这个原来素的信息/代码. 点击  (移动设备模式),就能编程手机或者平板的模式,(这个适合响应式设计的时候调试) Elements(元素):页面上所有的HTM">
+<meta property="og:image" content="http://chenchifeng.github.io/images/37d398cce77246d19c983ac696d3ccb8.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/d0db7297d6494d0392f03d89cb30a2eb.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/b52c4075635e346b76903ac0b1ea47d0.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/32cc7e5fe74044a05bca896dfa4121fb.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/0611846d014e2b7437d233369922fa7f.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/e3265ccc06ac94556fcb211888f04bcb.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/dc2d4b763f166d70a6d95a4b2a5f6525.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/99f3cb20f8f9ba4b0f48ea5ddaaa6f8c.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/4e56bccbf2411ccde31f9ca16f4bc19d.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/c5d2b5c99549d5bffbbbdb3377a1d501.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/2c6b1c16dd47d2653d5d6f3bd69d738f.png">
+<meta property="og:image" content="http://chenchifeng.github.io/images/0ff9badbb03f76a0a97ad4ca75f5374e.png">
+<meta property="og:updated_time" content="2017-08-27T09:54:20.995Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="aFung&#39;s Blog">
-<meta name="twitter:description" content="一个创造给自己的空间,远离其他繁杂的条条!">
+<meta name="twitter:title" content="开发者调试工具的使用">
+<meta name="twitter:description" content="如果没有控制台,那就好像瞎子那样的在编码。 学任何一个编程语言,肯定要会调试.才能只要错误出在哪. 按F12或者Ctrl+Shift+I,或者右键-&amp;gt;检查,打开控制台. 点击  (元素选择器),他会变蓝,然后就能选中(拾取)某个元素,定位查看这个原来素的信息/代码. 点击  (移动设备模式),就能编程手机或者平板的模式,(这个适合响应式设计的时候调试) Elements(元素):页面上所有的HTM">
+<meta name="twitter:image" content="http://chenchifeng.github.io/images/37d398cce77246d19c983ac696d3ccb8.png">
   
     <link rel="alternative" href="/atom.xml" title="aFung&#39;s Blog" type="application/atom+xml">
   
@@ -140,9 +155,7 @@
 </nav>
 
       <div class="body-wrap">
-        
-  
-    <article id="post-快速搭建CMS(内容管理系统)网站" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-关于开发者调试工具(控制台)使用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -151,66 +164,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/05/快速搭建CMS(内容管理系统)网站/">快速搭建CMS(内容管理系统)网站</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>很多的网站发布一些信息的话,不可能把所有信息都写在数据库里,那么我们就可以把我们的内容通过可视化界面操作,放到数据库里面.<br>然后我们的页面再从数据库进行抓取展现给用户.</p>
-<p>常用的CMS:Drupal,Wordpress(目前最火,而且相对简单方便),dd(织梦),doomia(一般用于移动端)<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/08/05/快速搭建CMS(内容管理系统)网站/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2017/08/05/快速搭建CMS(内容管理系统)网站/" class="archive-article-date">
-  	<time datetime="2017-08-05T09:51:06.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-08-05</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CMS/">CMS</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/技术/">技术</a><a class="article-category-link" href="/categories/技术/建站/">建站</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-关于开发者调试工具(控制台)使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/05/关于开发者调试工具(控制台)使用/">开发者调试工具的使用</a>
+    <h1 class="article-title" itemprop="name">
+      开发者调试工具的使用
     </h1>
   
 
@@ -412,378 +367,53 @@
   </div>
 </article>
 
-
-
-
-
-
-
-
-
-
   
-    <article id="post-一个响应式的实战" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+<nav id="article-nav">
+  
+    <a href="/2017/08/05/快速搭建CMS(内容管理系统)网站/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/09/一个响应式的实战/">响应式实战</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="经验-总结-说明"><a href="#经验-总结-说明" class="headerlink" title="经验/总结/说明"></a>经验/总结/说明</h1><p>By ChenChiFeng</p>
-<h2 id="响应式开发实战"><a href="#响应式开发实战" class="headerlink" title="响应式开发实战"></a>响应式开发实战</h2><h3 id="一、大致整个过程"><a href="#一、大致整个过程" class="headerlink" title="一、大致整个过程"></a>一、大致整个过程</h3><ul>
-<li><p>前期:</p>
-<ul>
-<li><p>分析设计图 -&gt; 标注 -&gt; 切图</p>
-</li>
-<li><p>基本文件结构组建 -&gt; 基本文件创建/添加</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/06/09/一个响应式的实战/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2017/06/09/一个响应式的实战/" class="archive-article-date">
-  	<time datetime="2017-06-08T16:21:36.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-06-09</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式/">响应式</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/技术/">技术</a><a class="article-category-link" href="/categories/技术/经验/">经验</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-关于我的最近-201705" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+          快速搭建CMS(内容管理系统)网站
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/20/关于我的最近-201705/">关于我的最近-2017-05</a>
-    </h1>
   
+    <a href="/2017/06/09/一个响应式的实战/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式实战</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="事情就是有完没完的"><a href="#事情就是有完没完的" class="headerlink" title="事情就是有完没完的"></a>事情就是有完没完的</h2><p>4月,就像去年一样,也是学习最认真的一个月。看着宿舍后面的那棵不不知道名叫什么的植物，逐渐从没有叶子到有叶子再一直成长变得茂盛，自己也会感觉想像它一样的到成长。<br>但是5月一下就来了，我还来不及，具体的自己想做完的一样事情，又被其他更紧迫重要的事情打断了。</p>
-<p>首先，考试的准备。虽然不知道什么时候会来到，但是还是必须做好准备才能安心的样子。<br>接着，毕业信息采集，毕业照就要来了，正装的准备，朋友的邀请等，然后事情又被打断了。<br>再来，相对非常重要的事情,忙碌了一周,每天晚上做到凌晨,做好了充分的准备,但是,毕竟条件受限,而且进行有点牵强，但求会有好结果吧。<br>终于，毕业照告一段落了，终于也到了校园招聘会了。简历的准备，这又是个问题了。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/05/20/关于我的最近-201705/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2017/05/20/关于我的最近-201705/" class="archive-article-date">
-  	<time datetime="2017-05-19T16:08:50.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-05-20</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/生活杂谈/">生活杂谈</a>
-	</div>
 
 
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
 
 
 
 
-
-
-
-
-
-
-  
-    <article id="post-随便说说关于这个Blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/11/随便说说关于这个Blog/">随便说说关于这个Blog</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为太久没有更新这个Blog了，而且感觉文章有点少，所以昨晚想更新一下，结果问题一连串。</p>
-<p>其实也不是，只是小问题，因为自己的的欠缺或者状态结果弄到了晚上2点多…至于怎么会这样的问题的原因，我也是不得而知了。</p>
-<p>反正，今天一起床一下就弄好了。</p>
-<p>嗯，的确，英文是很重要的，细节也是很重要的，还有先入为主而且每一句认为问题的所在是因为什么原因是一个错误的心理。</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/05/11/随便说说关于这个Blog/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2017/05/11/随便说说关于这个Blog/" class="archive-article-date">
-  	<time datetime="2017-05-11T03:05:38.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-05-11</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/生活杂谈/">生活杂谈</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-bat批处理脚本快速配置JSP-Java环境变量" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/11/bat批处理脚本快速配置JSP-Java环境变量/">bat批处理脚本快速配置JSP/Java环境变量</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="javahome-bat"><a href="#javahome-bat" class="headerlink" title="javahome.bat"></a>javahome.bat</h3><p>1.鼠标右击新建一个文本文档,重命名为javahome.bat,然后用记事本打开编辑.(下同)<br>2.内容:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">set</span> regpath=HKEY_LOCAL_MACHINE\SYSTEM\CurrentComtrolSet\Control\Session Manager\Enviroment</div><div class="line"><span class="built_in">set</span> evname=JAVA_HOME</div><div class="line"><span class="built_in">set</span> javapath=C:\Program Files\Java\jdk1.8.0_51\</div><div class="line">reg add <span class="string">"%regpath%"</span> /v <span class="string">"%evname%"</span> /d <span class="string">"%javapath%"</span> /f</div><div class="line">pause&gt;nul</div></pre></td></tr></table></figure></p>
-<p>3.保存,运行<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/05/11/bat批处理脚本快速配置JSP-Java环境变量/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2017/05/11/bat批处理脚本快速配置JSP-Java环境变量/" class="archive-article-date">
-  	<time datetime="2017-05-10T16:07:09.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-05-11</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bat/">bat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境变量/">环境变量</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/技术/">技术</a><a class="article-category-link" href="/categories/技术/技巧/">技巧</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-git速成入门教程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/29/git速成入门教程/">git速成入门教程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这里简单介绍一下git怎么用,方便快速上手。</p>
-<p>首先安装git，这样可以方便的在文件夹就可以右键git bash 来输入命令，而不用cd那么麻烦了。</p>
-<p>0.初始化git  (有些服务不能用的时候也需要重新初始化一下)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
-<p>1.创建自己的公钥(SSH key)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></div></pre></td></tr></table></figure></p>
-<p>然后 一直默认值 回车就可以了</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/03/29/git速成入门教程/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2017/03/29/git速成入门教程/" class="archive-article-date">
-  	<time datetime="2017-03-29T13:12:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-03-29</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码托管/">代码托管</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本管理/">版本管理</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/技术/">技术</a><a class="article-category-link" href="/categories/技术/基础/">基础</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-我的第一篇文章" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/23/我的第一篇文章/">欢迎来到我的个人博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>欢迎来到 <a href="http://zifun.cc/" target="_blank" rel="external">aFung’s Blog</a>! 这是我的第一篇文章推送.</p>
-<p>我会在这里所说MarkDown的使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">这个语法可以写代码,以下我也会每个语法简单的写以下对照</div><div class="line">首先这个代码区域的语法是</div><div class="line">  3个英文状态下的顿号+bash+代码内容+3个英文状态下的顿号</div><div class="line">  或者直接按8个空格</div></pre></td></tr></table></figure></p>
-<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 一级标题</span></div></pre></td></tr></table></figure>
-<p> 注意#后面是有空格的</p>
-<h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 二级标题</span></div></pre></td></tr></table></figure>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2016/11/23/我的第一篇文章/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/11/23/我的第一篇文章/" class="archive-article-date">
-  	<time datetime="2016-11-23T08:25:38.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-23</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MarkDown/">MarkDown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/技术/">技术</a><a class="article-category-link" href="/categories/技术/基础/">基础</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-  
 
 
       </div>
@@ -808,8 +438,8 @@
 		fancybox: true,
 		mathjax: false,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
